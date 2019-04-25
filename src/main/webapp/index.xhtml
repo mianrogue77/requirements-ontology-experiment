@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>PrimeFaces Hello World Example</title>
+</h:head>
+
+<h:body>
+	<h:form id="form">
+
+		<p:panel
+			header="Experimiento - Revisión de Requerimientos sobre un enfoque ontológico">
+			<h:panelGrid columns="3" cellpadding="4">
+				<h:outputText value="Palabra clave: " />
+				<p:inputText value="#{searchRequirements.keyword}" />
+
+				<p:commandButton value="Buscar"
+					action="#{searchRequirements.showGreeting()}"
+					update="searchResultPanel" />
+			</h:panelGrid>
+		</p:panel>
+
+		<p:panel id="searchResultPanel" header="Resultados de la búsqueda">
+			<p:dataTable id="searchResultTable" var="requirement"
+				value="#{searchRequirements.requirements}"
+				emptyMessage="No existen requerimientos para los críterios de búsqueda ingresados">
+
+				<p:column headerText="Id Req">
+					<h:outputText value="#{requirement.idRequirement}" />
+				</p:column>
+
+				<p:column headerText="Proyecto">
+					<h:outputText value="#{requirement.projectName}" />
+				</p:column>
+
+				<p:column headerText="Descripción">
+					<h:outputText value="#{requirement.description}" />
+				</p:column>
+
+				<p:column headerText="Prioridad">
+					<h:outputText value="#{requirement.priority}" />
+				</p:column>
+
+				<p:column headerText="Estado">
+					<h:outputText
+						value="#{(requirement.myClass == 'uni:Rechazada') ? 'Potencialmente para ser rechazado' : 'Potencialmente para ser aprobado'}" />
+				</p:column>
+
+				<p:column style="width:40px;text-align: center">
+					<p:commandButton update=":form:requirementDetail"
+						action="#{searchRequirements.obtainCriterias(requirement)}"
+						oncomplete="PF('requirementDialog').show()" title="View">
+						<f:setPropertyActionListener value="#{requirement}"
+							target="#{searchRequirements.selectedRequirement}" />
+					</p:commandButton>
+				</p:column>
+
+			</p:dataTable>
+		</p:panel>
+
+		<p:dialog header="Información del Requerimiento"
+			widgetVar="requirementDialog" modal="true" showEffect="fade"
+			hideEffect="fade" resizable="false" width="1009">
+			<p:outputPanel id="requirementDetail">
+				<p:panelGrid columns="2"
+					rendered="#{not empty searchRequirements.selectedRequirement}"
+					columnClasses="label,value">
+
+					<h:outputText value="Id Req:" />
+					<h:outputText
+						value="#{searchRequirements.selectedRequirement.idRequirement}" />
+
+					<h:outputText value="Proyecto:" />
+					<h:outputText
+						value="#{searchRequirements.selectedRequirement.projectName}" />
+
+					<h:outputText value="Descripción:" />
+					<h:outputText
+						value="#{searchRequirements.selectedRequirement.description}" />
+
+					<h:outputText value="Responsable:" />
+					<h:outputText
+						value="#{searchRequirements.selectedRequirement.responsable}" />
+
+					<h:outputText value="Estado:" />
+					<h:outputText
+						value="#{(searchRequirements.selectedRequirement.myClass == 'uni:Rechazada') ? 'Potencialmente para ser rechazado' : 'Potencialmente para ser aprobado'}" />
+
+					<h:outputText value="Ubicación artefacto:" />
+					<h:outputText
+						value="#{searchRequirements.selectedRequirement.pathDocument}" />
+				</p:panelGrid>
+
+				<p:panel id="criteriaPanel"
+					header="Criterios de evaluados no cumplidos">
+					<p:dataTable id="criteriaTable" var="criteria"
+						value="#{searchRequirements.criterias}"
+						emptyMessage="La evaluación de críterios han sido exitoso">
+						<p:column headerText="Id Criterio">
+							<h:outputText value="#{criteria.idCriteria}" />
+						</p:column>
+
+						<p:column headerText="Descripción Criterio">
+							<h:outputText value="#{criteria.description}" />
+						</p:column>
+					</p:dataTable>
+				</p:panel>
+			</p:outputPanel>
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>

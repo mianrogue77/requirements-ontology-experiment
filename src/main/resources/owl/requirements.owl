@@ -1,0 +1,1019 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY requirements "http://www.banrep.com.co/ontology/2019/requirements.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.banrep.com.co/ontology/2019/requirements.owl#"
+     xml:base="http://www.banrep.com.co/ontology/2019/requirements.owl"
+     xmlns:requirements="http://www.banrep.com.co/ontology/2019/requirements.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.banrep.com.co/ontology/2019/requirements.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#checks -->
+
+    <owl:ObjectProperty rdf:about="&requirements;checks">
+        <rdfs:range rdf:resource="&requirements;CriterioEvaluacion"/>
+        <rdfs:domain rdf:resource="&requirements;Evaluacion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#hasEvaluated -->
+
+    <owl:ObjectProperty rdf:about="&requirements;hasEvaluated">
+        <rdfs:range rdf:resource="&requirements;Evaluacion"/>
+        <rdfs:domain rdf:resource="&requirements;Requerimiento"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#hasRequirement -->
+
+    <owl:ObjectProperty rdf:about="&requirements;hasRequirement">
+        <rdfs:domain rdf:resource="&requirements;Proyecto"/>
+        <rdfs:range rdf:resource="&requirements;Requerimiento"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#isResponsableOf -->
+
+    <owl:ObjectProperty rdf:about="&requirements;isResponsableOf">
+        <rdfs:range rdf:resource="&requirements;Evaluacion"/>
+        <rdfs:domain rdf:resource="&requirements;Responsable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#criteria_description -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;criteria_description">
+        <rdfs:domain rdf:resource="&requirements;CriterioEvaluacion"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#evaluation_description -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;evaluation_description">
+        <rdfs:domain rdf:resource="&requirements;Evaluacion"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#first_name -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;first_name">
+        <rdfs:domain rdf:resource="&requirements;Responsable"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#id_criteria -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;id_criteria">
+        <rdfs:domain rdf:resource="&requirements;CriterioEvaluacion"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#id_evaluation -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;id_evaluation">
+        <rdfs:domain rdf:resource="&requirements;Evaluacion"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#id_project -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;id_project">
+        <rdfs:domain rdf:resource="&requirements;Proyecto"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#id_requirement -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;id_requirement">
+        <rdfs:domain rdf:resource="&requirements;Requerimiento"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#id_responsable -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;id_responsable">
+        <rdfs:domain rdf:resource="&requirements;Responsable"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#last_name -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;last_name">
+        <rdfs:domain rdf:resource="&requirements;Responsable"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#priority -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;priority">
+        <rdfs:domain rdf:resource="&requirements;Requerimiento"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#project_description -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;project_description">
+        <rdfs:domain rdf:resource="&requirements;Proyecto"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#project_name -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;project_name">
+        <rdfs:domain rdf:resource="&requirements;Proyecto"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#requirement_description -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;requirement_description">
+        <rdfs:domain rdf:resource="&requirements;Requerimiento"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#requirement_path -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;requirement_path">
+        <rdfs:domain rdf:resource="&requirements;Requerimiento"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#role -->
+
+    <owl:DatatypeProperty rdf:about="&requirements;role">
+        <rdfs:domain rdf:resource="&requirements;Responsable"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#Ambiguo -->
+
+    <owl:Class rdf:about="&requirements;Ambiguo">
+        <rdfs:subClassOf rdf:resource="&requirements;CriterioEvaluacion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#Aprobada -->
+
+    <owl:Class rdf:about="&requirements;Aprobada">
+        <rdfs:subClassOf rdf:resource="&requirements;Evaluacion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#Completo -->
+
+    <owl:Class rdf:about="&requirements;Completo">
+        <rdfs:subClassOf rdf:resource="&requirements;CriterioEvaluacion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#Consistente -->
+
+    <owl:Class rdf:about="&requirements;Consistente">
+        <rdfs:subClassOf rdf:resource="&requirements;CriterioEvaluacion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#ContenidoRequerido -->
+
+    <owl:Class rdf:about="&requirements;ContenidoRequerido">
+        <rdfs:subClassOf rdf:resource="&requirements;CriterioEvaluacion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#Correcto -->
+
+    <owl:Class rdf:about="&requirements;Correcto">
+        <rdfs:subClassOf rdf:resource="&requirements;CriterioEvaluacion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CriterioEvaluacion -->
+
+    <owl:Class rdf:about="&requirements;CriterioEvaluacion"/>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#DeProducto -->
+
+    <owl:Class rdf:about="&requirements;DeProducto">
+        <rdfs:subClassOf rdf:resource="&requirements;Requerimiento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#Evaluacion -->
+
+    <owl:Class rdf:about="&requirements;Evaluacion"/>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#Modificable -->
+
+    <owl:Class rdf:about="&requirements;Modificable">
+        <rdfs:subClassOf rdf:resource="&requirements;CriterioEvaluacion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#NoFuncional -->
+
+    <owl:Class rdf:about="&requirements;NoFuncional">
+        <rdfs:subClassOf rdf:resource="&requirements;Requerimiento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#Proyecto -->
+
+    <owl:Class rdf:about="&requirements;Proyecto"/>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#Rechazada -->
+
+    <owl:Class rdf:about="&requirements;Rechazada">
+        <rdfs:subClassOf rdf:resource="&requirements;Evaluacion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#Requerimiento -->
+
+    <owl:Class rdf:about="&requirements;Requerimiento"/>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#Responsable -->
+
+    <owl:Class rdf:about="&requirements;Responsable"/>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#SeguimientoCambios -->
+
+    <owl:Class rdf:about="&requirements;SeguimientoCambios">
+        <rdfs:subClassOf rdf:resource="&requirements;CriterioEvaluacion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#Trazable -->
+
+    <owl:Class rdf:about="&requirements;Trazable">
+        <rdfs:subClassOf rdf:resource="&requirements;CriterioEvaluacion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#Verificable -->
+
+    <owl:Class rdf:about="&requirements;Verificable">
+        <rdfs:subClassOf rdf:resource="&requirements;CriterioEvaluacion"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CECO0001 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CECO0001">
+        <rdf:type rdf:resource="&requirements;Completo"/>
+        <id_criteria rdf:datatype="&xsd;integer">40001</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">No se definió todas las respuestas del SW a todas las clases de datos de entrada</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CECO0002 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CECO0002">
+        <rdf:type rdf:resource="&requirements;Completo"/>
+        <id_criteria rdf:datatype="&xsd;integer">40002</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">No todas las figuras, tablas y diagramas están etiquetadas y referenciadas</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CECO0003 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CECO0003">
+        <rdf:type rdf:resource="&requirements;Completo"/>
+        <id_criteria rdf:datatype="&xsd;integer">40003</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no tiene asignado responsable y no se ha identificado las acciones requeridas para especificarlos</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CECO0004 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CECO0004">
+        <rdf:type rdf:resource="&requirements;Completo"/>
+        <id_criteria rdf:datatype="&xsd;integer">40004</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">Los estándares y procedimientos para la aceptación del producto final y los intermedios no están especificados</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CECR0001 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CECR0001">
+        <rdf:type rdf:resource="&requirements;ContenidoRequerido"/>
+        <id_criteria rdf:datatype="&xsd;integer">10001</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">Todas las entradas del sistema no están especificadas incluyendo su origen, exactitud, rango de valroes y frecuencia</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CECR0002 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CECR0002">
+        <rdf:type rdf:resource="&requirements;ContenidoRequerido"/>
+        <id_criteria rdf:datatype="&xsd;integer">10002</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">Todas las salidas del sistema no están especificadas incluyendo su destino, exactitud, rango de valores, frecuencia y frecuencia</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CECR0003 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CECR0003">
+        <rdf:type rdf:resource="&requirements;ContenidoRequerido"/>
+        <id_criteria rdf:datatype="&xsd;integer">10003</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">No está especificado los formatos de los resportes</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CECR0004 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CECR0004">
+        <rdf:type rdf:resource="&requirements;ContenidoRequerido"/>
+        <id_criteria rdf:datatype="&xsd;integer">10004</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">No están especificados todas las interfaces externas de hardware y software</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CECR0005 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CECR0005">
+        <rdf:type rdf:resource="&requirements;ContenidoRequerido"/>
+        <id_criteria rdf:datatype="&xsd;integer">10005</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">No están especificadas todas las interfaces de comunicación</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CECR0006 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CECR0006">
+        <rdf:type rdf:resource="&requirements;ContenidoRequerido"/>
+        <id_criteria rdf:datatype="&xsd;integer">10006</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El tiempo de respuesta esperado, desde el punto de vista del usuario, no está especificado para las operaciones que lo requieren?</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CECR0007 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CECR0007">
+        <rdf:type rdf:resource="&requirements;ContenidoRequerido"/>
+        <id_criteria rdf:datatype="&xsd;integer">10007</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">No se especifica los datos usados y los datos resultado</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CECR0008 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CECR0008">
+        <rdf:type rdf:resource="&requirements;ContenidoRequerido"/>
+        <id_criteria rdf:datatype="&xsd;integer">10008</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">No está especificada la confiabilidad, incluyendo las consecuencias por la falla del software</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEEA0001 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEEA0001">
+        <rdf:type rdf:resource="&requirements;Ambiguo"/>
+        <id_criteria rdf:datatype="&xsd;integer">30001</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no está escrito en lenguaje entendible por el usuario</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEEA0002 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEEA0002">
+        <rdf:type rdf:resource="&requirements;Ambiguo"/>
+        <id_criteria rdf:datatype="&xsd;integer">30002</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no está escrito en lenguaje entendible para los desarrolladores</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEEA0003 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEEA0003">
+        <rdf:type rdf:resource="&requirements;Ambiguo"/>
+        <id_criteria rdf:datatype="&xsd;integer">30003</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento tiene más de una interpretación</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEEA0004 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEEA0004">
+        <rdf:type rdf:resource="&requirements;Ambiguo"/>
+        <id_criteria rdf:datatype="&xsd;integer">30004</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">Los terminos ambiguos no comunes o de jerga técnica no están incluidos en el glosario</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEEA0005 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEEA0005">
+        <rdf:type rdf:resource="&requirements;Ambiguo"/>
+        <id_criteria rdf:datatype="&xsd;integer">30005</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no es único. Hay conflicto con otro requerimiento</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEEA0006 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEEA0006">
+        <rdf:type rdf:resource="&requirements;Ambiguo"/>
+        <id_criteria rdf:datatype="&xsd;integer">30006</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no está normalizado</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEEA0007 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEEA0007">
+        <rdf:type rdf:resource="&requirements;Ambiguo"/>
+        <id_criteria rdf:datatype="&xsd;integer">30007</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no está encadenado</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEEC0001 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEEC0001">
+        <rdf:type rdf:resource="&requirements;Correcto"/>
+        <id_criteria rdf:datatype="&xsd;integer">20001</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no es necesario. No es relevante al problema y a la solución</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEEC0002 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEEC0002">
+        <rdf:type rdf:resource="&requirements;Correcto"/>
+        <id_criteria rdf:datatype="&xsd;integer">20002</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no es viable con los cronogramas, alcance, estrucutra y presupuesto establecido</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEEC0003 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEEC0003">
+        <rdf:type rdf:resource="&requirements;Correcto"/>
+        <id_criteria rdf:datatype="&xsd;integer">20003</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no tiene un alcance y contexto definido</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEEM0001 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEEM0001">
+        <rdf:type rdf:resource="&requirements;Modificable"/>
+        <id_criteria rdf:datatype="&xsd;integer">70001</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no tiene una tabla de contenido, o indice o referencias cruzadas explícitas</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEEM0002 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEEM0002">
+        <rdf:type rdf:resource="&requirements;Modificable"/>
+        <id_criteria rdf:datatype="&xsd;integer">70002</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento está establecido más de una vez</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEEO0001 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEEO0001">
+        <rdf:type rdf:resource="&requirements;Consistente"/>
+        <id_criteria rdf:datatype="&xsd;integer">50001</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no es consistente internamente</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEET0001 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEET0001">
+        <rdf:type rdf:resource="&requirements;Trazable"/>
+        <id_criteria rdf:datatype="&xsd;integer">80001</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no hace referencia explicita a sus fuentes en documentos anteriores</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEET0002 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEET0002">
+        <rdf:type rdf:resource="&requirements;Trazable"/>
+        <id_criteria rdf:datatype="&xsd;integer">80002</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no tiene una forma única de identificarlo</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CEEV0001 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CEEV0001">
+        <rdf:type rdf:resource="&requirements;Verificable"/>
+        <id_criteria rdf:datatype="&xsd;integer">60001</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no es verificable</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CESC0001 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CESC0001">
+        <rdf:type rdf:resource="&requirements;SeguimientoCambios"/>
+        <id_criteria rdf:datatype="&xsd;integer">90001</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no conserva la versión anterior</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CESC0002 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CESC0002">
+        <rdf:type rdf:resource="&requirements;SeguimientoCambios"/>
+        <id_criteria rdf:datatype="&xsd;integer">90002</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no tiene registro de las modificaciones</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#CESC0003 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;CESC0003">
+        <rdf:type rdf:resource="&requirements;SeguimientoCambios"/>
+        <id_criteria rdf:datatype="&xsd;integer">90003</id_criteria>
+        <criteria_description rdf:datatype="&xsd;string">El requerimiento no fue ajustado después de la versión anterior</criteria_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#EVAP0001 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;EVAP0001">
+        <rdf:type rdf:resource="&requirements;Aprobada"/>
+        <id_evaluation rdf:datatype="&xsd;integer">1000</id_evaluation>
+        <evaluation_description rdf:datatype="&xsd;string">Requerimiento aprobado</evaluation_description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#EVRE0001 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;EVRE0001">
+        <rdf:type rdf:resource="&requirements;Rechazada"/>
+        <id_evaluation rdf:datatype="&xsd;integer">1</id_evaluation>
+        <evaluation_description rdf:datatype="&xsd;string">Evaluación de prueba 1</evaluation_description>
+        <checks rdf:resource="&requirements;CECO0001"/>
+        <checks rdf:resource="&requirements;CECO0002"/>
+        <checks rdf:resource="&requirements;CECO0003"/>
+        <checks rdf:resource="&requirements;CECO0004"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#EVRE0002 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;EVRE0002">
+        <rdf:type rdf:resource="&requirements;Rechazada"/>
+        <id_evaluation rdf:datatype="&xsd;integer">2</id_evaluation>
+        <evaluation_description rdf:datatype="&xsd;string">Evaluación de prueba 2</evaluation_description>
+        <checks rdf:resource="&requirements;CECO0002"/>
+        <checks rdf:resource="&requirements;CECO0004"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#EVRE0003 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;EVRE0003">
+        <rdf:type rdf:resource="&requirements;Rechazada"/>
+        <id_evaluation rdf:datatype="&xsd;integer">3</id_evaluation>
+        <evaluation_description rdf:datatype="&xsd;string">Evaluación de prueba 3</evaluation_description>
+        <checks rdf:resource="&requirements;CECO0001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#EVRE0004 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;EVRE0004">
+        <rdf:type rdf:resource="&requirements;Rechazada"/>
+        <id_evaluation rdf:datatype="&xsd;integer">4</id_evaluation>
+        <evaluation_description rdf:datatype="&xsd;string">Evaluación de prueba 4</evaluation_description>
+        <checks rdf:resource="&requirements;CECO0001"/>
+        <checks rdf:resource="&requirements;CECR0002"/>
+        <checks rdf:resource="&requirements;CECR0004"/>
+        <checks rdf:resource="&requirements;CECR0006"/>
+        <checks rdf:resource="&requirements;CECR0008"/>
+        <checks rdf:resource="&requirements;CEEA0004"/>
+        <checks rdf:resource="&requirements;CEEM0001"/>
+        <checks rdf:resource="&requirements;CEEV0001"/>
+        <checks rdf:resource="&requirements;CESC0002"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#EVRE0005 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;EVRE0005">
+        <rdf:type rdf:resource="&requirements;Aprobada"/>
+        <id_evaluation rdf:datatype="&xsd;integer">5</id_evaluation>
+        <evaluation_description rdf:datatype="&xsd;string">Evaluación de prueba 5</evaluation_description>
+        <checks rdf:resource="&requirements;CESC0002"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#EVRE0006 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;EVRE0006">
+        <rdf:type rdf:resource="&requirements;Rechazada"/>
+        <id_evaluation rdf:datatype="&xsd;integer">6</id_evaluation>
+        <evaluation_description rdf:datatype="&xsd;string">Evaluación de prueba 6</evaluation_description>
+        <checks rdf:resource="&requirements;CECO0002"/>
+        <checks rdf:resource="&requirements;CECO0003"/>
+        <checks rdf:resource="&requirements;CECR0003"/>
+        <checks rdf:resource="&requirements;CECR0004"/>
+        <checks rdf:resource="&requirements;CECR0006"/>
+        <checks rdf:resource="&requirements;CEEA0004"/>
+        <checks rdf:resource="&requirements;CEEM0001"/>
+        <checks rdf:resource="&requirements;CEEV0001"/>
+        <checks rdf:resource="&requirements;CESC0002"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#EVRE0007 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;EVRE0007">
+        <rdf:type rdf:resource="&requirements;Rechazada"/>
+        <id_evaluation rdf:datatype="&xsd;integer">7</id_evaluation>
+        <evaluation_description rdf:datatype="&xsd;string">Evaluación de prueba 7</evaluation_description>
+        <checks rdf:resource="&requirements;CECO0002"/>
+        <checks rdf:resource="&requirements;CECO0003"/>
+        <checks rdf:resource="&requirements;CECR0003"/>
+        <checks rdf:resource="&requirements;CECR0004"/>
+        <checks rdf:resource="&requirements;CECR0006"/>
+        <checks rdf:resource="&requirements;CEEM0001"/>
+        <checks rdf:resource="&requirements;CEEV0001"/>
+        <checks rdf:resource="&requirements;CESC0002"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#PR0001 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;PR0001">
+        <rdf:type rdf:resource="&requirements;Proyecto"/>
+        <id_project rdf:datatype="&xsd;integer">1</id_project>
+        <project_name rdf:datatype="&xsd;string">DCV</project_name>
+        <project_description rdf:datatype="&xsd;string">El Depósito Central de Valores del Banco de la República (DCV), es un sistema diseñado para el depósito, custodia y administración de títulos valores en forma de registros electrónicos (desmaterializados), de acuerdo con lo previsto en los artículos 21 de la Ley 31 de 1992 y 22 del Decreto 2520 de 1993.</project_description>
+        <hasRequirement rdf:resource="&requirements;RQ0001"/>
+        <hasRequirement rdf:resource="&requirements;RQ0002"/>
+        <hasRequirement rdf:resource="&requirements;RQ0003"/>
+        <hasRequirement rdf:resource="&requirements;RQ0004"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#PR0002 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;PR0002">
+        <rdf:type rdf:resource="&requirements;Proyecto"/>
+        <id_project rdf:datatype="&xsd;integer">2</id_project>
+        <project_name rdf:datatype="&xsd;string">ADOCS</project_name>
+        <project_description rdf:datatype="&xsd;string">ADOCS</project_description>
+        <hasRequirement rdf:resource="&requirements;RQ0005"/>
+        <hasRequirement rdf:resource="&requirements;RQ0006"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#PR0003 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;PR0003">
+        <rdf:type rdf:resource="&requirements;Proyecto"/>
+        <id_project rdf:datatype="&xsd;integer">3</id_project>
+        <project_name rdf:datatype="&xsd;string">Boletín composición de colecciones Bibliográficas</project_name>
+        <project_description rdf:datatype="&xsd;string">Establecer la estructura de las colecciones de la red de bibliotecas</project_description>
+        <hasRequirement rdf:resource="&requirements;RQ0007"/>
+        <hasRequirement rdf:resource="&requirements;RQ0008"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#RE0001 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;RE0001">
+        <rdf:type rdf:resource="&requirements;Responsable"/>
+        <id_responsable rdf:datatype="&xsd;integer">1</id_responsable>
+        <role rdf:datatype="&xsd;string">Analista de Requerimientos</role>
+        <first_name rdf:datatype="&xsd;string">Miguel Ángel</first_name>
+        <last_name rdf:datatype="&xsd;string">Rodríguez Guerra</last_name>
+        <isResponsableOf rdf:resource="&requirements;EVAP0001"/>
+        <isResponsableOf rdf:resource="&requirements;EVRE0001"/>
+        <isResponsableOf rdf:resource="&requirements;EVRE0002"/>
+        <isResponsableOf rdf:resource="&requirements;EVRE0003"/>
+        <isResponsableOf rdf:resource="&requirements;EVRE0007"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#RE0002 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;RE0002">
+        <rdf:type rdf:resource="&requirements;Responsable"/>
+        <id_responsable rdf:datatype="&xsd;integer">2</id_responsable>
+        <role rdf:datatype="&xsd;string">Analista de Requerimientos</role>
+        <first_name rdf:datatype="&xsd;string">Marcela</first_name>
+        <last_name rdf:datatype="&xsd;string">Trujillo</last_name>
+        <isResponsableOf rdf:resource="&requirements;EVRE0004"/>
+        <isResponsableOf rdf:resource="&requirements;EVRE0006"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#RE0003 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;RE0003">
+        <rdf:type rdf:resource="&requirements;Responsable"/>
+        <id_responsable rdf:datatype="&xsd;integer">3</id_responsable>
+        <role rdf:datatype="&xsd;string">Analista de Requerimientos</role>
+        <first_name rdf:datatype="&xsd;string">Francy</first_name>
+        <last_name rdf:datatype="&xsd;string">Giraldo</last_name>
+        <isResponsableOf rdf:resource="&requirements;EVRE0005"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#RQ0001 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;RQ0001">
+        <rdf:type rdf:resource="&requirements;DeProducto"/>
+        <id_requirement rdf:datatype="&xsd;integer">1</id_requirement>
+        <priority rdf:datatype="&xsd;integer">1</priority>
+        <requirement_path rdf:datatype="&xsd;string">C:\Users\usuario\Downloads\Requerimientos - BANREP\CQ36967 operaciones ciegas sisneg.docx</requirement_path>
+        <requirement_description rdf:datatype="&xsd;string">Incluir campo de operaciones No visibles en plano de sistemas externos</requirement_description>
+        <hasEvaluated rdf:resource="&requirements;EVRE0001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#RQ0002 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;RQ0002">
+        <rdf:type rdf:resource="&requirements;DeProducto"/>
+        <priority rdf:datatype="&xsd;integer">1</priority>
+        <id_requirement rdf:datatype="&xsd;integer">2</id_requirement>
+        <requirement_description rdf:datatype="&xsd;string">Ajuste a la asociación de cuentas de los intermediarios</requirement_description>
+        <requirement_path rdf:datatype="&xsd;string">C:\Users\usuario\Downloads\Requerimientos - BANREP\CQ 39898 Ajuste asociación de cuentas.docx</requirement_path>
+        <hasEvaluated rdf:resource="&requirements;EVRE0002"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#RQ0003 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;RQ0003">
+        <rdf:type rdf:resource="&requirements;DeProducto"/>
+        <priority rdf:datatype="&xsd;integer">1</priority>
+        <id_requirement rdf:datatype="&xsd;integer">3</id_requirement>
+        <requirement_description rdf:datatype="&xsd;string">Ajuste a la asociación de cuentas de los intermediarios</requirement_description>
+        <requirement_path rdf:datatype="&xsd;string">C:\Users\usuario\Downloads\Requerimientos - BANREP\CQ38238 Toma de posesión o intervención de entidades.docx</requirement_path>
+        <hasEvaluated rdf:resource="&requirements;EVRE0003"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#RQ0004 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;RQ0004">
+        <rdf:type rdf:resource="&requirements;DeProducto"/>
+        <priority rdf:datatype="&xsd;integer">1</priority>
+        <id_requirement rdf:datatype="&xsd;integer">4</id_requirement>
+        <requirement_path rdf:datatype="&xsd;string">C:\Users\usuario\Downloads\Requerimientos - BANREP\CQ41155 Pantalla Contingencia turno.docx</requirement_path>
+        <requirement_description rdf:datatype="&xsd;string">Pantalla Contingencia turno</requirement_description>
+        <hasEvaluated rdf:resource="&requirements;EVAP0001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#RQ0005 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;RQ0005">
+        <rdf:type rdf:resource="&requirements;DeProducto"/>
+        <priority rdf:datatype="&xsd;integer">2</priority>
+        <id_requirement rdf:datatype="&xsd;integer">5</id_requirement>
+        <requirement_path rdf:datatype="&xsd;string">C:\Users\usuario\Downloads\Requerimientos - BANREP\ADOCS-ENTRE-01_Req_01_Recuperar_informacion_reprocesada.doc</requirement_path>
+        <requirement_description rdf:datatype="&xsd;string">Recuperación de información reprocesada</requirement_description>
+        <hasEvaluated rdf:resource="&requirements;EVRE0004"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#RQ0006 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;RQ0006">
+        <rdf:type rdf:resource="&requirements;DeProducto"/>
+        <priority rdf:datatype="&xsd;integer">3</priority>
+        <id_requirement rdf:datatype="&xsd;integer">6</id_requirement>
+        <requirement_path rdf:datatype="&xsd;string">C:\Users\usuario\Downloads\Requerimientos - BANREP\ADOCS-ENTRE-03_Req_03_Modificar_Aplicativo_BorraMax_Ajuste.doc</requirement_path>
+        <requirement_description rdf:datatype="&xsd;string">Modificar Aplicativo BorraMax</requirement_description>
+        <hasEvaluated rdf:resource="&requirements;EVRE0005"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#RQ0007 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;RQ0007">
+        <rdf:type rdf:resource="&requirements;DeProducto"/>
+        <priority rdf:datatype="&xsd;integer">1</priority>
+        <id_requirement rdf:datatype="&xsd;integer">7</id_requirement>
+        <requirement_path rdf:datatype="&xsd;string">C:\Users\usuario\Downloads\Backlog de Productos Oficial Banco Republica-Cultural 20181113.xlsx</requirement_path>
+        <requirement_description rdf:datatype="&xsd;string">CCDR-003 - Pregunta de Negocio - ¿Cómo esta compuesta la colección por Autor, Editorial, País de publicación, ISBN, ciudad de publicaión, signatura complementaria, Tipo colección?</requirement_description>
+        <hasEvaluated rdf:resource="&requirements;EVRE0006"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.banrep.com.co/ontology/2019/requirements.owl#RQ0008 -->
+
+    <owl:NamedIndividual rdf:about="&requirements;RQ0008">
+        <rdf:type rdf:resource="&requirements;DeProducto"/>
+        <priority rdf:datatype="&xsd;integer">2</priority>
+        <id_requirement rdf:datatype="&xsd;integer">8</id_requirement>
+        <requirement_path rdf:datatype="&xsd;string">C:\Users\usuario\Downloads\Backlog de Productos Oficial Banco Republica-Cultural 20181113.xlsx</requirement_path>
+        <requirement_description rdf:datatype="&xsd;string">CCDR-004 - Pregunta de Negocio - ¿Cómo esta compuesta la colección por Autor, Editorial, País de publicación, ISBN, ciudad de publicaión, signatura complementaria, Tipo colección?</requirement_description>
+        <hasEvaluated rdf:resource="&requirements;EVRE0007"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&requirements;Ambiguo"/>
+            <rdf:Description rdf:about="&requirements;Aprobada"/>
+            <rdf:Description rdf:about="&requirements;Completo"/>
+            <rdf:Description rdf:about="&requirements;Consistente"/>
+            <rdf:Description rdf:about="&requirements;ContenidoRequerido"/>
+            <rdf:Description rdf:about="&requirements;Correcto"/>
+            <rdf:Description rdf:about="&requirements;DeProducto"/>
+            <rdf:Description rdf:about="&requirements;Modificable"/>
+            <rdf:Description rdf:about="&requirements;NoFuncional"/>
+            <rdf:Description rdf:about="&requirements;Proyecto"/>
+            <rdf:Description rdf:about="&requirements;Rechazada"/>
+            <rdf:Description rdf:about="&requirements;Responsable"/>
+            <rdf:Description rdf:about="&requirements;SeguimientoCambios"/>
+            <rdf:Description rdf:about="&requirements;Trazable"/>
+            <rdf:Description rdf:about="&requirements;Verificable"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
